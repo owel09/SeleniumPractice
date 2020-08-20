@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /*
@@ -16,7 +17,17 @@ public class WebDriverDemo {
 
         webDriver.get("http://www.google.com");
 
-        webDriver.findElement(By.name("q"));
+        WebElement searchField = webDriver.findElement(By.name("q"));
+        searchField.sendKeys("pluralsight");
+        searchField.submit();
+
+        WebElement imagesLink = webDriver.findElement(By.linkText("Images"));
+        imagesLink.click();
+
+        WebElement imageElement = webDriver.findElement(By.cssSelector("#islrg > div.islrc > div:nth-child(1) > a.wXeWr.islib.nfEiy.mM5pbd"));
+        WebElement imageLink = imageElement.findElement(By.tagName("img"));
+        imageLink.click();
+
     }
 
 }
