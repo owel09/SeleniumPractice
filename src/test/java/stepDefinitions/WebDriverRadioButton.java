@@ -14,9 +14,8 @@ import java.util.List;
 public class WebDriverRadioButton {
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver","D://owel//Documents//1_Owel Docs//Training//Driver//chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
-        webDriver.get("D:\\owel\\Documents\\1_Owel Docs\\Training\\SeleniumPractice\\src\\main\\webapp\\RadioButton.html");
+        WebDriver webDriver = new ChromeDriver(); // new instance ng webDriver
+        webDriver.get("D:\\owel\\\\Documents\\1_Owel Docs\\Training\\SeleniumPractice\\src\\main\\\\webapp\\RadioButton.html"); //ito yung url na ioopen or yun html file
 
         List<WebElement> radioButtons = webDriver.findElements(By.name("gender")); //kaya naka list para ilagay lahat ng radio button sa list
         radioButtons.get(2).click();
@@ -26,7 +25,6 @@ public class WebDriverRadioButton {
                 System.out.println(radiobutton.getAttribute("value"));
             }
 
-//            todo: practice yung pagsulat ng setProperty
             
         }
 
