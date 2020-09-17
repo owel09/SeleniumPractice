@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 /*
  *Created by owel on 19/08/2020 9:04 AM
@@ -20,6 +25,10 @@ public class WebDriverDemo {
         WebElement searchField = webDriver.findElement(By.name("q"));
         searchField.sendKeys("pluralsight");
         searchField.submit();
+
+//        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(webDriver,10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Images")));
 
         WebElement imagesLink = webDriver.findElement(By.linkText("Images"));
         imagesLink.click();
