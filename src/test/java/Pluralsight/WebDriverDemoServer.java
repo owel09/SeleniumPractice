@@ -1,24 +1,27 @@
-package stepDefinitions;
+package Pluralsight;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /*
  *Created by owel on 19/08/2020 9:04 AM
  */
-public class WebDriverDemo {
+public class WebDriverDemoServer {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
 
         System.setProperty("webdriver.chrome.driver","D://owel//Documents//1_Owel Docs//Training//Driver//chromedriver.exe");
-        WebDriver webDriver = new ChromeDriver();
+//        WebDriver webDriver = new ChromeDriver();
+
+        WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),DesiredCapabilities.chrome());
 
         webDriver.get("http://www.google.com");
 
