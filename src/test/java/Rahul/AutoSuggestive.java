@@ -11,12 +11,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class AutoSuggestive {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","D:\\owel\\Documents\\1_Owel Docs\\Training\\Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
         webDriver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
         webDriver.findElement(By.id("autosuggest")).sendKeys("ind");
+
     }
 }
