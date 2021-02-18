@@ -5,9 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AssignmentGreenKart {
 
@@ -17,6 +21,13 @@ public class AssignmentGreenKart {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
+
+        //IMPLICIT WAIT APPLIES GLOBALLY AND WILL WAIT 5 SECONDS PER LINE
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        //EXPLICIT WAIT USING WEBDRIVER
+        WebDriverWait w = new WebDriverWait(webDriver,5);
+
         webDriver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 
         //DECLARE ARRAY
@@ -30,8 +41,18 @@ public class AssignmentGreenKart {
         //RELATIVE XPATH USING CONTAINS TEXT
         webDriver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
 
+        //IMPLEMENTATION OF EXPLICIT WAIT
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.promoCode")));
+
         //CSS USING TAGNAME AND CLASSNAME
-        webDriver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
+        webDriver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
+        webDriver.findElement(By.cssSelector("button.promoBtn")).click();
+
+
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.promoInfo")));
+
+
+
     }
 
     public static void addItems(WebDriver webDriver, String[] productArray) {
