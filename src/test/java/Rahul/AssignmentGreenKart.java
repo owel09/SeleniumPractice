@@ -24,9 +24,17 @@ public class AssignmentGreenKart {
 
         Thread.sleep(3000);
         addItems(webDriver,productArray);
+
+        webDriver.findElement(By.cssSelector("img[alt='Cart']")).click();
+
+        //RELATIVE XPATH USING CONTAINS TEXT
+        webDriver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+
+        //CSS USING TAGNAME AND CLASSNAME
+        webDriver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
     }
 
-    private static void addItems(WebDriver webDriver, String[] productArray) {
+    public static void addItems(WebDriver webDriver, String[] productArray) {
         int j = 0;
 
         //DECLARE LIST TO SAVE ALL 30 WEBELEMENTS OF PRODUCT-NAME
