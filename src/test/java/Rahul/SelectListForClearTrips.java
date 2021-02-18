@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class AssignmentClearTrips {
+public class SelectListForClearTrips {
     public static void main(String[] args) throws InterruptedException{
 
         System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");

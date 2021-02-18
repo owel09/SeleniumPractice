@@ -13,7 +13,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class AssignmentGreenKart {
+/*
+gumamit ng Implicit and Explicit wait
+method call ng webDriver
+ */
+public class ImplicitExplicitGreenKart {
 
     public static void main(String[] args) throws InterruptedException{
 
@@ -51,8 +55,6 @@ public class AssignmentGreenKart {
 
         w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.promoInfo")));
 
-
-
     }
 
     public static void addItems(WebDriver webDriver, String[] productArray) {
@@ -85,7 +87,6 @@ public class AssignmentGreenKart {
                 }
             }
         }
-
 
     }
 }
