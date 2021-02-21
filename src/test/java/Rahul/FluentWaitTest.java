@@ -48,10 +48,19 @@ public class FluentWaitTest {
             */
             @Override
             public WebElement apply(WebDriver webDriver) {
-                return webDriver.findElement(By.cssSelector("[id='finish']"));
+
+                /*
+                if condition na katumbas na methid ng visibilityOfElementLocated
+                pagkaclick kasi ng start nakita na agad yung WebElement pero di pa rin talaga visible yung hello world
+                 */
+                if(webDriver.findElement(By.cssSelector("[id='finish'] h4")).isDisplayed()){
+                    return webDriver.findElement(By.cssSelector("[id='finish'] h4"));
+                }
+                else
+                    return null;
             }
         });
-        System.out.println(webDriver.findElement(By.cssSelector("[id='finish']")).isDisplayed());
+        System.out.println(webDriver.findElement(By.cssSelector("[id='finish'] h4")).getText());
 
 
     }
