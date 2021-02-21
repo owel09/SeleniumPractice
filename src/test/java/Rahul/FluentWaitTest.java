@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.function.Function;
@@ -24,7 +23,7 @@ public class FluentWaitTest {
         webDriver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 
         //css selector invoking child button
-        webDriver.findElement(By.cssSelector("[id= 'start'] button"));
+        webDriver.findElement(By.cssSelector("[id= 'start'] button")).click();
 
         /*
         FluentWait - class
@@ -35,21 +34,24 @@ public class FluentWaitTest {
 
         withTimeout - how much time we will wait to monitor the object
          */
-        Wait <WebDriver> fluentWait = new FluentWait<WebDriver>(webDriver).withTimeout(Duration.ofSeconds(30))
+        Wait <WebDriver> fluentWait = new FluentWait <WebDriver>(webDriver).withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
 
 
-        WebElement foo = fluentWait.until(new Function<WebDriver,WebElement>()) {
-            public WebElement apply(WebDriver webDriver){
-                return webDriver.findElement(By.cssSelector("[id='finish'] h4"));
+        WebElement foo = fluentWait.until(new Function<WebDriver, WebElement>() {
+            /*
+            automatic lumabas ito after ng until
+            walang ExpectedConditions si fluenWait kaya gagawa ka ng method na magrereturn ng WebElement
+
+            WebElement - return type ng method
+            WebDriver webriver - passing argument
+            */
+            @Override
+            public WebElement apply(WebDriver webDriver) {
+                return webDriver.findElement(By.cssSelector("[id='finish']"));
             }
         });
-
-        /*
-        walang ExpectedConditions si fluenWait kaya gagawa ka ng method na magrereturn ng WebElement
-
-         */
-
+        System.out.println(webDriver.findElement(By.cssSelector("[id='finish']")).isDisplayed());
 
 
     }
