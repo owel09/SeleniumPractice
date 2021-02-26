@@ -48,10 +48,14 @@ public class FluentWaitTest {
             */
             @Override
             public WebElement apply(WebDriver webDriver) {
-                return webDriver.findElement(By.cssSelector("[id='finish']"));
+
+                if(webDriver.findElement(By.cssSelector("[id='finish']")).isDisplayed()){
+                    return webDriver.findElement(By.cssSelector("[id='finish']"));
+                }else
+                    return null;
             }
         });
-        System.out.println(webDriver.findElement(By.cssSelector("[id='finish']")).isDisplayed());
+        System.out.println(webDriver.findElement(By.cssSelector("[id='finish']")).getText());
 
 
     }
