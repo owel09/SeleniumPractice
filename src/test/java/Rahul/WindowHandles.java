@@ -28,8 +28,9 @@ public class WindowHandles {
         webDriver.switchTo().window(chidID); //go to chid tab
 
         System.out.println(webDriver.findElement(By.cssSelector("p.im-para.red")).getText()); //using class locator pero may spaces
+        String emailID = webDriver.findElement(By.cssSelector("p.im-para.red")).getText().split("at")[1].trim().split(" ")[0];
 
-//        todo: study set and iterator
-
+        webDriver.switchTo().window(parentID);
+        webDriver.findElement(By.id("username")).sendKeys(emailID);
     }
 }
