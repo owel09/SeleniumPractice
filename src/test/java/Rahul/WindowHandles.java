@@ -17,6 +17,7 @@ public class WindowHandles {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://rahulshettyacademy.com/loginpagePractise/#");
+
         webDriver.findElement(By.cssSelector("a.blinkingText")).click();
 
         Set<String> windows = webDriver.getWindowHandles(); //get the window ids open by the automation. return type is set of strings [parentid,childid]

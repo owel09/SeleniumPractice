@@ -1,4 +1,4 @@
-package Rahul;
+package Rahul.Assignment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
