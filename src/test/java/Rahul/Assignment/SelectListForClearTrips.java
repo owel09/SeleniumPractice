@@ -1,4 +1,4 @@
-package Rahul;
+package Rahul.Assignment;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +38,8 @@ public class SelectListForClearTrips {
 
         Thread.sleep(2000L);
 
+        //CSS SELECTOR USING CLASS ATTRIBUTE AND TRAVERSE SYNTAX
+        //TAGNAME[CLASS='<CLASSNAME>'] TAGNAME
         List<WebElement> option = webDriver.findElements(By.cssSelector("li[class='list'] a"));
 
         for (WebElement varOption:option){
