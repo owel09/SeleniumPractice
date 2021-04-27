@@ -17,13 +17,16 @@ public class Calendar {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.path2usa.com/travel-companions");
 
-        //CSS SELECTOR USING CLASS ATTRIBUTE TRAVERSE WITH SPECIFIC ELEMENT
-        webDriver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).click();
         webDriver.findElement(By.xpath("//input[@id='travel_date']")).click();
+
+        //CSS SELECTOR USING CLASS ATTRIBUTE TRAVERSE WITH SPECIFIC ELEMENT
+//        webDriver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).click();
 
         //! - NEGATION - kung false ang sagot gagawin nyang true para pumasok sa block ng while loop
         //contains method returns boolean value kaya pamasok sya sa while loop
-        while (!webDriver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText().contains("May")){
+        while (!webDriver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText().contains("May"))
+        {
+            webDriver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
 
         }
 
@@ -35,7 +38,7 @@ public class Calendar {
         for(int i = 0 ; i < count ; i ++){
             String text = webDriver.findElements(By.className("day")).get(i).getText();
 
-            if(text.equalsIgnoreCase("26")){
+            if(text.equalsIgnoreCase("29")){
                 webDriver.findElements(By.className("day")).get(i).click();
                 break;
             }
