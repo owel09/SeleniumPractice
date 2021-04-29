@@ -1,6 +1,5 @@
 package Rahul;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +26,7 @@ public class MaximizeDeleteCookies {
         File src = ((TakesScreenshot)webDriver).getScreenshotAs(OutputType.FILE);
 
         //copying the file in the local machine
-        FileUtils.copyFile(src,new File("C:\\Users\\User\\Documents\\Driver\\screenshot.png"));
+//        FileUtils.copyFile(src,new File("C:\\Users\\User\\Documents\\Driver\\screenshot.png"));
 
 
     }
