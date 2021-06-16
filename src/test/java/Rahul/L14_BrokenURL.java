@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class BrokenURL {
+public class L14_BrokenURL {
     public static void main(String[] args) throws IOException {
 
         System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
@@ -36,15 +36,12 @@ public class BrokenURL {
 
             int respCode = conn.getResponseCode();
             System.out.println(respCode);
-            softAssert.assertTrue(respCode>400,"The link with Text broken link" + link.getText() + "is broken with response code: " +respCode);
+            softAssert.assertTrue(respCode<400,"The link with Text broken link " + link.getText() + " is broken with response code: " +respCode);
 
 
         }
 
-
-
-
-
+        softAssert.assertAll();
 
     }
 }
