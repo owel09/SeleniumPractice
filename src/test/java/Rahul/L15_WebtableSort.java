@@ -11,6 +11,9 @@ import java.util.stream.Collectors;
 
 /*
  *Created by owel on 25/06/2021 10:11 AM
+ * Click yung Veg name header para mag-sort
+ * Kunin yung list at ilagay sa originalList
+ * Declare sortedList at gamitin yung sort method
  */
 public class L15_WebtableSort {
     public static void main(String[] args) {
