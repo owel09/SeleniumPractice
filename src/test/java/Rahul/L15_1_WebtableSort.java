@@ -11,11 +11,12 @@ import java.util.stream.Collectors;
 
 /*
  *Created by owel on 25/06/2021 10:11 AM
+ * 113. Perform Web Table Sorting using Selenium Java Streams
  * Click yung Veg name header para mag-sort
  * Kunin yung list at ilagay sa originalList
  * Declare sortedList at gamitin yung sort method
  */
-public class L15_WebtableSort {
+public class L15_1_WebtableSort {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");

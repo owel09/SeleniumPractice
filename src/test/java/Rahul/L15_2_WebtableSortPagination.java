@@ -11,11 +11,12 @@ import java.util.stream.Collectors;
 
 /*
  *Created by owel on 30/06/2021 12:05 PM
+ * 115. Automating Pagination Scenarios to search the data using do while loop
  * Scan yung Veg name column and check kung nandoon yung "Rice".
  * Kapag wala click Next button.
  * Kapag nakita yung Beans, print the Price.
  */
-public class L15_WebtableSortPaganation {
+public class L15_2_WebtableSortPagination {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
