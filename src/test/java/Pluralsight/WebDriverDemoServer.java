@@ -18,7 +18,7 @@ public class WebDriverDemoServer {
 
     public static void main(String[] args) throws MalformedURLException {
 
-        System.setProperty("webdriver.chrome.driver","D://owel//Documents//1_Owel Docs//Training//Driver//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D://owel//Documents//Training//Driver//chromedriver.exe");
 //        WebDriver webDriver = new ChromeDriver();
 
         WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),DesiredCapabilities.chrome());
