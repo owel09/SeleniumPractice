@@ -16,7 +16,7 @@ public class OrangeHRMsteps {
     @Given("I launch chrome browser")
     public void i_launch_chrome_browser() {
 
-        System.setProperty("webdriver.chrome.driver","D://owel//Documents//Training//Driver//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
         webDriver = new ChromeDriver();
 
     }
