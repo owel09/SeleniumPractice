@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class L26_DataDrivenExcel2 {
+public class L26_DataDrivenPractice {
 
     public static void main(String[] args) throws IOException {
 
