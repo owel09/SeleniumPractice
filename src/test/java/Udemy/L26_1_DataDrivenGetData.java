@@ -1,7 +1,9 @@
 package Udemy;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -10,12 +12,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class L26_DataDrivenGetData {
+public class L26_1_DataDrivenGetData {
 
     public ArrayList<String> getData(String userInput) throws IOException {
         //declare fis and workbook
         //fis - object that gives permission to read the file. Ito lang yung tinatanggap ng workbook
-        FileInputStream fis = new FileInputStream("C:\\Driver\\CardDetails.xlsx");
+        FileInputStream fis = new FileInputStream("C:\\Users\\Work\\Documents\\CardDetails.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
         //declare array list kasi dito natin iistore yung nakuha natin sa excel
@@ -62,21 +64,29 @@ public class L26_DataDrivenGetData {
 
                 //Scan only specific column
                 //this is the concept how we go each cell in the first row like above, if present then proceed
-                //sa line 53 kasi cell yun pero dito row, pababa ang movement natin at checking kung may value
+                //sa line 52 kasi cell yun pero dito row, pababa ang movement natin at checking kung may value
                 while(rows.hasNext()){
 
                     //if row is present mapupunta siya sa column index 1, hindi sa header
                     Row rowSearch = rows.next();
 
-                    //kunin mo muna yung correct column gamit yung getCell tapos icompare gamit yung if
+                    //kunin mo muna yung correct column gamit yung getCell tapos icompare yung laman ng row gamit IF
                     if(rowSearch.getCell(column).getStringCellValue().equalsIgnoreCase(userInput)){
 
                         //going to each cell again gamit ulit yung Iterator
                         Iterator<Cell> cellGrab = rowSearch.cellIterator();
                         while (cellGrab.hasNext()){
 
-                            //yung string ilalagay mo sa arraylist gamit yung add
-                            arrayList.add(cellGrab.next().getStringCellValue());
+                            //LOGIC TO CHECK VALUE EACH CELL IF STRING OR NUMERIC. Di kasi ireretrieve kapag naka General mode yung cell sa excel
+                            //Store muna sa checker
+                            Cell checkCellType = cellGrab.next();
+                            if(checkCellType.getCellType()== CellType.STRING){
+                                //yung string ilalagay mo sa arraylist gamit yung add
+                                arrayList.add(checkCellType.getStringCellValue());
+                            }
+                            else{
+                                arrayList.add(NumberToTextConverter.toText(checkCellType.getNumericCellValue()));
+                            }
 
                         }
 
