@@ -12,7 +12,7 @@ import java.io.IOException;
 public class L14_MaximizeDeleteCookies {
     public static void main(String[] args) throws IOException {
 
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().deleteAllCookies();

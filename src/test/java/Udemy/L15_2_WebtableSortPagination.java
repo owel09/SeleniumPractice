@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class L15_2_WebtableSortPagination {
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 

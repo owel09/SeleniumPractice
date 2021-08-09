@@ -15,7 +15,7 @@ public class L26_DataDrivenGetData {
     public ArrayList<String> getData(String userInput) throws IOException {
         //declare fis and workbook
         //fis - object that gives permission to read the file. Ito lang yung tinatanggap ng workbook
-        FileInputStream fis = new FileInputStream("C:\\Users\\User\\Documents\\Driver\\CardDetails.xlsx");
+        FileInputStream fis = new FileInputStream("C:\\Driver\\CardDetails.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
         //declare array list kasi dito natin iistore yung nakuha natin sa excel

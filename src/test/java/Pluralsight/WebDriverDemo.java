@@ -17,7 +17,7 @@ public class WebDriverDemo {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver","D://owel//Documents//Training//Driver//chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
 
         webDriver.get("http://www.google.com");

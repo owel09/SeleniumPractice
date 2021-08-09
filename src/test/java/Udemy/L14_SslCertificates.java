@@ -22,7 +22,7 @@ public class L14_SslCertificates {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.merge(desiredCapabilities);
 
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
 
     }

@@ -39,7 +39,7 @@ public class L25_ExtentReport {
     @Test
     public void extentReportDemo(){
         ExtentTest test = extent.createTest("Initial Demo");
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\Documents\\Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Driver\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://rahulshettyacademy.com");
         System.out.println(webDriver.getTitle());
