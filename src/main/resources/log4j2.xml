@@ -26,6 +26,10 @@
             <AppenderRef ref="File"/>
         </Logger>
 
+        <Logger name = "Udemy.L27_AmazonLog4j" level="trace" additivity = "false">
+            <AppenderRef ref="File"/>
+        </Logger>
+
 <!--        trace - prints all the output-->
 <!--        error - error or fatal lang lalabas dito-->
         <Root level="error">
