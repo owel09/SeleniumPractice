@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+<!--        additivity = false means once mo lang irrun. this is to avoid duplication. kapag inalis mo yan 2 beses magpprint yung logs-->
+        <Logger name = "Udemy.L27_AlphaLog4j" level="trace" additivity = "false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+
+<!--        trace - prints all the output-->
+<!--        error - error or fatal lang lalabas dito-->
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+
+    </Loggers>
+</Configuration>
