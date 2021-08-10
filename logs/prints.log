@@ -1,4 +1,3 @@
-03:52:26.584 [main] DEBUG Udemy.L27_AlphaLog4j - I clicked button1
-03:52:26.589 [main] INFO  Udemy.L27_AlphaLog4j - Confirmation page is displayed
-03:52:26.589 [main] ERROR Udemy.L27_AlphaLog4j - Confirmation page is not displayed
-03:52:26.590 [main] FATAL Udemy.L27_AlphaLog4j - button1 is missing
+04:21:09.139 [main] INFO  Udemy.L27_AmazonLog4j - Successfully switched to frame
+04:21:09.151 [main] DEBUG Udemy.L27_AmazonLog4j - Identifying Draggable objects
+04:21:09.538 [main] INFO  Udemy.L27_AmazonLog4j - Drag and drop success
