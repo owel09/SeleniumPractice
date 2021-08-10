@@ -6,8 +6,9 @@ import org.apache.logging.log4j.Logger;
 
 /*
  *Created by Work on 10/08/2021 11:45
- *Running will display all the log message kasi
+ *Running will display all the log message and prints in the prints.log
  *<Logger name = "Udemy.L27_AlphaLog4j" level="trace"
+ *<AppenderRef ref="File"/>
  *Ginawa ko ito in case ang requirement ng client is to view all logs in Alpha but wants only error logs in Beta
  */
 public class L27_AlphaLog4j {

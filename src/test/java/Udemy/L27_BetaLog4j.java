@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 
 /*
  *Created by Work on 10/08/2021 11:45
- *Running will only display Error and Fatal log kasi yung configuration sa log4j2.xml is <Root level="error">
+ *Running will only display Error and Fatal log in console kasi yung configuration sa log4j2.xml
+ *<Root level="error">
+ *<AppenderRef ref="Console"/>
  *applies globally yan
 */
 public class L27_BetaLog4j {
