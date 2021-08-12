@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class L26_DataDrivenPractice {
+public class L26_DataDrivenPractice1 {
 
     public static void main(String[] args) throws IOException {
 
