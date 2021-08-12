@@ -22,8 +22,14 @@ public class L26_DataDrivenPractice2 {
                 XSSFSheet correctSheet = workbook.getSheetAt(i);
 
                 Iterator<Row> rowIterator = correctSheet.iterator();
+                /*
+                Yung pattern ng logic is Iterator, while, next
+                Pero dito wala sa gitna yung while kasi ang initial goal natin is makapunta sa firstCol and firstRow
+                mejo malupet pala tong rowIterator object ko kasi nagamit ko sa baba.
+                 */
                 Row firstRow = rowIterator.next();
 
+                //Logic to read from left to right : Iterator, while, next
                 Iterator<Cell> cellSearch = firstRow.cellIterator();
 
                 while (cellSearch.hasNext()){
@@ -32,13 +38,17 @@ public class L26_DataDrivenPractice2 {
                     if(cellValue.getStringCellValue().equalsIgnoreCase("Factory")){
                         Cell correctHeader = cellValue;
 
+                        //trip ko lang iprint yung header
                         System.out.println(correctHeader);
+
+                        //ito talaga yung goal, dapat makuha mo yung correct index para sa getCell method
                         int correctColumnIndex = correctHeader.getColumnIndex();
                         System.out.println(correctColumnIndex);
 
                         while (rowIterator.hasNext()){
                             Row rowSearch = rowIterator.next();
                             if(rowSearch.getCell(correctColumnIndex).getStringCellValue().equalsIgnoreCase("Oklahoma")){
+                                //Kaparehas ng line 32 logic. Ito yung pagmove from left to right
                                 Iterator<Cell> cellGrab = rowSearch.cellIterator();
 
                                 while (cellGrab.hasNext()){
