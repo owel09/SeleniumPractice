@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  *Created by Work on 12/08/2021 16:48
  *Test Case sample na connected sa L28_OR_RediffLoginPage. Tinawag ko lang dito yung mga object
  */
-public class L28_TC_LoginApplication {
+public class L28_1_TC_LoginApp {
 
     @Test
     public void Login(){
@@ -16,9 +16,13 @@ public class L28_TC_LoginApplication {
         WebDriver driver = new ChromeDriver();
         driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 
-        L28_OR_RediffLoginPage rediffLoginPage = new L28_OR_RediffLoginPage(driver);
+        L28_1_POP_RediffLoginPage rediffLoginPage = new L28_1_POP_RediffLoginPage(driver);
+
         rediffLoginPage.emailID().sendKeys("example@yahoo.com");
         rediffLoginPage.passwordInput().sendKeys("password123");
+        rediffLoginPage.submit1().click();
 
     }
+
+
 }
